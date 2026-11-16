@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pa mi niñita hermosa ❤️</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <audio id="bg-music" loop>
+        <source src="music/rolita.mp3" type="audio/mpeg">
+    </audio>
+    <button id="music-btn" class="music-btn" title="Reproducir/Pausar música">🎵 Play</button>
+
+    <main id="menu-screen" class="screen active">
+        <div class="hero">
+            <span class="badge">Felices 2 semanas, amor ✨</span>
+            <h1>Para ti, mi <span>Danielita</span> preciosa ❤️</h1>
+            <p class="subtitle">"Te amouuuuu, con todo mi colashooooon mi niñita hermoshaaaaa"</p>
+        </div>
+
+        <div class="cards-container">
+            <div class="menu-card" onclick="openSection('counter-screen')">
+                <div class="icon">⏳</div>
+                <h3>Tiempo contigo</h3>
+                <p>El tiempo que llevamos juntos amor ❤️</p>
+            </div>
+
+            <div class="menu-card" onclick="openSection('letter-screen')">
+                <div class="icon">💌</div>
+                <h3>Una cartita 💗</h3>
+                <p>Pícale aquí para leerle mi niña...</p>
+            </div>
+
+            <div class="menu-card" onclick="openSection('game-screen')">
+                <div class="icon">🎮</div>
+                <h3>Pregunta rápida</h3>
+                <p>Respondeme mi niña</p>
+            </div>
+        </div>
+    </main>
+
+    <section id="counter-screen" class="screen">
+        <button class="back-btn" onclick="goBack()">← Regresar</button>
+        <div class="content-box">
+            <h2>Llevamos juntos...</h2>
+            <p class="nick-text">Y la neta cada día contigo me gusta más, amorcito</p>
+            
+            <div class="timer-grid">
+                <div class="time-unit">
+                    <span id="days">14</span>
+                    <label>Días</label>
+                </div>
+                <div class="time-unit">
+                    <span id="hours">00</span>
+                    <label>Horas</label>
+                </div>
+                <div class="time-unit">
+                    <span id="minutes">00</span>
+                    <label>Minutos</label>
+                </div>
+                <div class="time-unit">
+                    <span id="seconds">00</span>
+                    <label>Segundos</label>
+                </div>
+            </div>
+            <p class="footer-note">...y los que nos faltan todavía, amor ❤️</p>
+        </div>
+    </section>
+
+    <!-- SI checas acá no me juzgues amorcito jaja, había una zona que no pude adaptar yo y me tuve que ayudar de gemini XD -->
+    <section id="letter-screen" class="screen">
+        <button class="back-btn" onclick="goBack()">← Regresar</button>
+        <div class="letter-wrapper">
+            <div class="envelope-header" id="envelope-trigger">
+                <h2>Para Dani, mi niña hermosa 💖</h2>
+                <p id="letter-hint">Toca aquí para abrir la carta...</p>
+            </div>
+
+            <div class="letter-body" id="letter-body">
+                <p>Holiii, <strong>amorcito</strong>:</p>
+                <p>Sé que apenas van dos semanas, pero neta que bonito se siente estar contigo, desde que empezamos a salir me cambiaste los dias por completo y siempre traigo una sonrisa por tu culpa jajjaja</p>
+                
+                <div class="photo-gallery">
+                    <div class="photo-frame">
+                        <img src="img/foto1.jpg" alt="Nosotros 1" onerror="this.style.display='none'">
+                    </div>
+                    <div class="photo-frame">
+                        <img src="img/foto2.jpg" alt="Nosotros 2" onerror="this.style.display='none'">
+                    </div>
+                     <div class="photo-frame">
+                        <img src="img/foto3.jpg" alt="Nosotros 1" onerror="this.style.display='none'">
+                    </div>
+                </div>
+
+                <p>Amo cómo eres, tu risita y lo ligero que se siente el tiempo cada vez que estoy contigo, quise hacerte este pequeño detalle nomas para que nunca se te olvide lo mucho que me encantas 💞 </p>
+                <p>Gracias por dejarme esta contigo <strong>amorcito</strong>, y por estas primeras dos semanas tan lindas, te amo preciosa</p>
+                <p class="signature">Con todo mi cariño,<br>Sebas ❤️</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="game-screen" class="screen">
+        <button class="back-btn" onclick="goBack()">← Regresar</button>
+        <div class="content-box game-box" id="game-area">
+            <h2>A ver, mi niña, dime la verdad...</h2>
+            <p class="question-text">Me quieres mucho y vamos por muchos meses más? 🥺❤️</p>
+            <p id="device-hint" class="hint-small"></p>
+
+            <div class="buttons-area">
+                <button id="yes-btn" class="btn-yes">SI, OBVIO! ❤️</button>
+                <button id="no-btn" class="btn-no">No 🙄</button>
+            </div>
+
+            <div id="success-message" class="hidden">
+                <h3>¡Ya sabía que ibas a decir que sí, mi chaparrita! 🥰✨</h3>
+                <p>Felices 2 semanas corazon, te amo muchísimo.</p>
+            </div>
+        </div>
+    </section>
+
+    <div id="photo-modal" class="photo-modal">
+        <span class="close-modal" id="close-modal">&times;</span>
+        <img class="modal-img" id="modal-img" src="" alt="Foto en grande">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
